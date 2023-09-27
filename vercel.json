@@ -9,6 +9,10 @@
     },
     "routes": [
         {
+            "src": "/favicon.ico",
+            "dest": "/public/favicon.ico"
+        },
+        {
             "src": "/build/assets/(.*)",
             "dest": "/api/assets.php?assets=$1"
         },
