@@ -18,6 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("/debug",function (Request $request) {
+Route::post("/debug",function (Request $request) {
     dd($request);
 });
