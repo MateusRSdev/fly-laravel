@@ -12,7 +12,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://teste-api-vercel-v2-u51b.vercel.app/",
+        "APP_URL": "https://fly-laravel.vercel.app/",
         "APP_KEY":"base64:jl+DR+0jbAtugxnAlIn522ViDx1eV4jfsrccMhhqLAo=",
  
         "APP_CONFIG_CACHE": "/tmp/config.php",
