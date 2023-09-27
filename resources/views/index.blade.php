@@ -7,6 +7,7 @@
     <title>Sera um milagre ?</title>
     @vite("resources/js/app.js")
     @vite("resources/sass/app.scss")
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <h1 class="display-1">EU TENHO A FORCA!!!!</h1>
