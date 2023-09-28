@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <x-layout.navbar/>
+    @include('components.layout.navbar')
     @yield('content')
     
 </body>
