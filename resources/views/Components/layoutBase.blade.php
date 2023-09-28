@@ -9,8 +9,7 @@
     @vite("resources/sass/app.scss")
 </head>
 <body>
-    @yield('navbar')
-    <x-navbar/>
+ 
     {{ $slot }}
 </body>
 </html>
