@@ -1,5 +1,6 @@
-<x-layoutBase title="{{$title}}">
-   
-    <h1>teste</h1>
+@extends('layout.layout-base')
+@section('content')
+<h1>teste</h1>
+    
+@endsection
 
-</x-layoutBase>
