@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\indexController;
+use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [indexController::class,"index"]);
+
+
+Route::get("/login",[loginController::class,"index"]);
+Route::post("/login",[loginController::class,"index"]);
+Route::get("/login/create",[loginController::class,"create"]);
+Route::post("/login/create",[loginController::class,"store"]);

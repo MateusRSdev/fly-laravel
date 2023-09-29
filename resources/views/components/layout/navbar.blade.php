@@ -19,11 +19,17 @@
                 asass
             </li>
         </ul>
-        <ul class="navbar-nav">
+        @empty($logged)
+        <ul class="navbar-nav  d-flex flex-row">
             <li class="nav-link">
-                <a href="" class="btn btn-warning">Login</a>
+                <a href="/login/create" class="btn btn-outline-warning mx-2">Criar conta</a>
+            </li>
+            <li class="nav-link">
+                <a href="/login" class="btn btn-warning">Login</a>
             </li>
         </ul>
+        @endempty
+        
     </nav>
     
    
