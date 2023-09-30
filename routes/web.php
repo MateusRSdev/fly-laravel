@@ -21,4 +21,4 @@ Route::get('/', [indexController::class,"index"]);
 Route::get("/login",[loginController::class,"index"]);
 Route::post("/login",[loginController::class,"index"]);
 Route::get("/login/create",[loginController::class,"create"]);
-Route::post("/login/create",[loginController::class,"store"]);
+Route::post("/login/store",[loginController::class,"store"])->name("login.store");

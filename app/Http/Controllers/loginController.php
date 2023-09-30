@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\userRequest;
 use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class loginController extends Controller
@@ -34,7 +36,15 @@ class loginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $errors = $request->validate([
+            "email"=>["required","email"],
+            "password"=>["required","min:7"],
+            "name"=>["required"]
+        ]);
+        dd($errors);
+        User::create($request->all());
+
+        return response()->json(User::all());
     }
 
     /**
