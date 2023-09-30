@@ -4,7 +4,7 @@
 <div class="container">
     <div class="bg-ligth p-5 col-5 mx-auto mt-5 rounded shadow-lg">
         <h3 class="display-5">Criar Conta</h3>
-        <form action="{{route("login.store")}}"  method="post" >
+        <form action="{{route("register")}}"  method="post" >
           @csrf
             <div class="form-group">
               @error('name')
@@ -29,7 +29,10 @@
               <input type="password" class="form-control" name="password" id="pass" placeholder="Senha">
             </div>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" name="rememberMe">
+              @error('rememberMe')
+              <small>{{$message}}</small>
+              @enderror
+              <input type="checkbox" class="form-check-input" name="rememberMe" value="true" >
               <label class="form-check-label" for="exampleCheck1">Lembrar meu login</label>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>

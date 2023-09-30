@@ -10,4 +10,8 @@ class indexController extends Controller
     {
         return view("index")->with("title","por enquanto sem nome");
     }
+    public function dashboard()
+    {
+        return view("dashboard")->with("title","por enquanto sem nome");
+    }
 }

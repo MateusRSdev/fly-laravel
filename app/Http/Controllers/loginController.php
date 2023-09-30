@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\userRequest;
-use App\Models\User;
 use Auth;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\userRequest;
+use Illuminate\Support\Facades\Hash;
 
 class loginController extends Controller
 {
@@ -36,23 +37,31 @@ class loginController extends Controller
      */
     public function store(Request $request)
     {
-        $errors = $request->validate([
+        $request->validate([
             "email"=>["required","email"],
             "password"=>["required","min:7"],
-            "name"=>["required"]
+            "name"=>["required"],
         ]);
-        dd($errors);
-        User::create($request->all());
 
-        return response()->json(User::all());
+        $data = $request->except("_token");
+        $data["password"] = Hash::make($data["password"]);
+        $user = User::create($data);
+        Auth::login($user,isset($data["rememberMe"]));
+        return to_route("dashboard");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function singIn(Request $request)
     {
-        //
+        $request->validate([
+            "email"=>["required","email"],
+            "password"=>["required","min:7"],
+        ]);
+        $data = $request->except("_token");
+        Auth::attempt($data,isset($data["rememberMe"]));
+        return to_route("dashboard");
     }
 
     /**
