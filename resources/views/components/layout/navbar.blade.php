@@ -16,7 +16,7 @@
                 asass
             </li>
             <li class="nav-link mx-2">
-                asass
+                <a href="/logout">sair</a>
             </li>
         </ul>
         @empty($logged)

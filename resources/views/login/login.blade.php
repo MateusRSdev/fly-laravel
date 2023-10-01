@@ -4,6 +4,7 @@
 <div class="container">
     <div class="bg-ligth p-5 col-5 mx-auto mt-5 rounded shadow-lg">
         <h3 class="display-5">Login</h3>
+        {{ $errors->login->first() }}
         <form action="{{route("login")}}" method="post">
           @csrf
           <div class="form-group">

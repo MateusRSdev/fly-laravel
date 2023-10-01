@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Requests\userRequest;
 use Illuminate\Support\Facades\Hash;
+use PDOException;
 
 class loginController extends Controller
 {
@@ -45,8 +45,13 @@ class loginController extends Controller
 
         $data = $request->except("_token");
         $data["password"] = Hash::make($data["password"]);
-        $user = User::create($data);
-        Auth::login($user,isset($data["rememberMe"]));
+        try{
+            Auth::logout();
+            $user = User::create($data);
+            Auth::login($user,isset($data["rememberMe"]));
+        }catch (PDOException $e) {
+            return to_route("createUser")->withErrors("Ops, algo deu errado","create");
+        }
         return to_route("dashboard");
     }
 
@@ -59,25 +64,16 @@ class loginController extends Controller
             "email"=>["required","email"],
             "password"=>["required","min:7"],
         ]);
-        $data = $request->except("_token");
-        Auth::attempt($data,isset($data["rememberMe"]));
+        // dd($request->rememberMe);
+        $data = $request->except("_token","rememberMe");
+        try {
+            Auth::logout();
+            Auth::attempt($data,isset($request->rememberMe));
+        } catch (\Throwable $e) {
+            return to_route("login")->withErrors("Ops, algo deu errado","login");
+        }
+
         return to_route("dashboard");
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
-    {
-        //
     }
 
     /**
@@ -85,6 +81,7 @@ class loginController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        Auth::logout();
+        return to_route("login");
     }
 }

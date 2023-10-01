@@ -4,6 +4,8 @@
 <div class="container">
     <div class="bg-ligth p-5 col-5 mx-auto mt-5 rounded shadow-lg">
         <h3 class="display-5">Criar Conta</h3>
+        {{ $errors->create->first() }}
+
         <form action="{{route("register")}}"  method="post" >
           @csrf
             <div class="form-group">
