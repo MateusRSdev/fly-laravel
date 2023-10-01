@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container">
-    <div class="bg-ligth p-5 col-5 mx-auto mt-5 rounded shadow-lg">
-        <h3 class="display-5">Login</h3>
+    <div class="form-container p-5 col-5 mx-auto mt-5 rounded shadow-lg">
+        <h3 class="display-5 text-dark">Login</h3>
         {{ $errors->login->first() }}
         <form action="{{route("login")}}" method="post">
           @csrf

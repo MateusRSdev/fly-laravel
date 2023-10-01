@@ -1,3 +1,59 @@
+
+
+*:hover{
+    outline: 1px solid red;
+}
 body{
-    background-color: red;
+    background-color: rgb(24, 26, 29);
+}
+h2,h1,h4,h3{
+    color: antiquewhite;
+}
+i{
+    color: azure;
+}
+
+.userMain{
+    background-color: rgb(24, 21, 35);
+    border-radius: 20px;
+}
+.config-icon-link{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    text-decoration: none;
+    rotate: -15deg;
+}
+.rotate:hover{
+    animation: rotate .5s ease-in-out ;
+    transition:animation 4s ;
+}
+@keyframes rotate{
+    0%{  transform: rotate(0deg);}
+    100%{  transform: rotate(180deg);}
+}
+.acountInfo{
+    margin-left: 30px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 0px 10px;
+    background-color: dimgrey;
+}
+.userName{
+    margin: 10px;
+    text-align: end;
+    width: 500px;
+    font-weight: bold;
+    text-wrap: wrap;
+
+}
+
+.project-title{
+    border-bottom: 2px dashed;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.form-container{
+    background-color: rgb(234, 234, 234);
 }
