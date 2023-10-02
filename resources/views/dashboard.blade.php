@@ -18,11 +18,36 @@
             <a href="/user/config" class="config-icon-link rotate"><i class="ri-settings-3-line ri-2x rotate"></i></a>
         </div>
     </div>
-    <h3 class="project-title">Projetos:<i class="ri-lightbulb-flash-line"></i></h3>
+    <div class="row mb-0">
+        <h3 class="project-title col-10">Projetos:<i class="ri-lightbulb-flash-line"></i></h3>
+        <div class="d-flex align-items-center w-auto">
+        <a href=""class="btn button"><i class="ri-add-line"></i> Adicionar Novo</a>
+        </div>
+    </div>
 
-    <div class="row">
-        <div class="project">
-            
+    <div class="row ">
+        <div class="project d-flex mb-5">
+            <div class="card-project">
+                <h5 class="m-4"><a href="">Projeto <i class="ri-link"></i></a></h5>
+                <a href="" class="card-link">https://site.comksjdkasjbfkasbdhkasdag\hfjahsdhkavshkdahksdvvahdahs</a>
+                <p class="online" title="Serivço online"><i class="ri-global-line onlineOn"></i></p>
+            </div>
+            <div class="card-project">
+                <h5 class="m-4"><a href="">Projeto <i class="ri-link"></i></a></h5>
+                <a href="" class="card-link">https://site.comksjdkasjbfkasbdhkasdag\hfjahsdhkavshkdahksdvvahdahs</a>
+                <p class="online" title="Serivço Offline"><i class="ri-global-line onlineOff"></i></p>
+            </div>
+            <div class="card-project">
+                <h5 class="m-4"><a href="">Projeto <i class="ri-link"></i></a></h5>
+                <a href="" class="card-link">https://site.comksjdkasjbfkasbdhkasdag\hfjahsdhkavshkdahksdvvahdahs</a>
+                <p class="online" title="Serivço online"><i class="ri-global-line onlineOn"></i></p>
+            </div>
+            <div class="card-project">
+                <h5 class="m-4"><a href="">Projeto <i class="ri-link"></i></a></h5>
+                <a href="" class="card-link">https://site.comksjdkasjbfkasbdhkasdag\hfjahsdhkavshkdahksdvvahdahs</a>
+                <p class="online" title="Serivço online"><i class="ri-global-line onlineOn"></i></p>
+            </div>
+
         </div>
     </div>
     

@@ -7,19 +7,19 @@
         
         <ul class="navbar-nav d-flex flex-row">
             <li class="nav-link mx-2">
-                asass
+                <a href="/logout" class="nav-link">Home</a>
             </li>
             <li class="nav-link mx-2">
-                asass
+                <a href="/logout" class="nav-link">Estatisticas</a>
             </li>
             <li class="nav-link mx-2">
-                asass
+                <a href="/logout" class="nav-link">Documentação</a>
             </li>
             <li class="nav-link mx-2">
-                <a href="/logout">sair</a>
+                <a href="/logout" class="nav-link">sair</a>
             </li>
         </ul>
-        @empty($logged)
+        @if (Auth::guest()|isset($logged))
         <ul class="navbar-nav  d-flex flex-row">
             <li class="nav-link">
                 <a href="/login/create" class="btn btn-outline-warning mx-2">Criar conta</a>
@@ -28,7 +28,10 @@
                 <a href="/login" class="btn btn-warning">Login</a>
             </li>
         </ul>
-        @endempty
+        @endif
+
+
+
         
     </nav>
     
