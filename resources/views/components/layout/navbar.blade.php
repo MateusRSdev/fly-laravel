@@ -7,7 +7,7 @@
         
         <ul class="navbar-nav d-flex flex-row">
             <li class="nav-link mx-2">
-                <a href="/logout" class="nav-link">Home</a>
+                <a href="/?home=true" class="nav-link">Home</a>
             </li>
             <li class="nav-link mx-2">
                 <a href="/logout" class="nav-link">Estatisticas</a>

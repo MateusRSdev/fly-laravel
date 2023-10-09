@@ -7,8 +7,15 @@ use Illuminate\Http\Request;
 
 class indexController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        if(Auth::check()){
+            if(isset($request->home)){
+                return view("index")->with("title","por enquanto sem nome");
+            }
+            return to_route("dashboard");
+        }
+
         return view("index")->with("title","por enquanto sem nome");
     }
     public function dashboard()
