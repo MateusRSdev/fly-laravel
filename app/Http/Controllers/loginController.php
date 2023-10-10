@@ -45,9 +45,9 @@ class loginController extends Controller
 
         $data = $request->except("_token");
         $data["password"] = Hash::make($data["password"]);
+        $user = User::create($data);
         try{
             Auth::logout();
-            $user = User::create($data);
             Auth::login($user,isset($data["rememberMe"]));
         }catch (PDOException $e) {
             return to_route("createUser")->withErrors("Ops, algo deu errado","create");

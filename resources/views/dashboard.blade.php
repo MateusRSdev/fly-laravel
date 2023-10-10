@@ -21,7 +21,7 @@
     <div class="row mb-0">
         <h3 class="project-title col-10">Projetos:<i class="ri-lightbulb-flash-line"></i></h3>
         <div class="d-flex align-items-center w-auto">
-        <a href=""class="btn button"><i class="ri-add-line"></i> Adicionar Novo</a>
+        <a href="{{route("create.new")}}"class="btn button"><i class="ri-add-line"></i> Adicionar Novo</a>
         </div>
     </div>
 

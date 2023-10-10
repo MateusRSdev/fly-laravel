@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\indexController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,5 @@ Route::get("/logout",[loginController::class,"destroy"]);
 Route::post("/login/store",[loginController::class,"store"])->name("register");
 
 Route::middleware("auth")->get("/dashboard",[indexController::class,"dashboard"])->name("dashboard");
+
+Route::get("/dashboard/create/new",[ProjectController::class,"index"])->name("create.new");
