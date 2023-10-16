@@ -10,11 +10,25 @@ function addForm() {
     origemId = origemId + 1;
     formBase.setAttribute("name", "origem-"+origemId);
     if(origemId > 3){
-        form.insertAdjacentHTML("afterbegin","O numero de dominios que podem enviar requisicoes nao pode passar de 3<br>");
-
+        alert("O numero de dominios cadastrados nao pode passar de 3")
     }else{
         form.appendChild(formBase);
     }
 
 
+}
+function addInput(){
+    
+    let templates = document.getElementById("templates")
+    let append = document.getElementById("fields")
+
+
+    templates = templates.childNodes[1];
+    let input = templates.cloneNode(true);
+    console.log(input);
+    
+    input.childNodes[1].setAttribute("name","campo1");
+    input.childNodes[3].setAttribute("name","campo1");
+    append.appendChild(input)
+    
 }

@@ -24,11 +24,28 @@
 
                 </div>
                 <div class="col-5">
+                    <h3>Dados a serem recebidos <a onclick="addInput()" class="btn btn-outline-light">+</a></h3>
+                    <div id="fields" class="inputsConfig">
 
+                    </div>
                 </div>
             </div>
         </form>
     </main>
+    <div id="templates" class="d-none">
+        <div id="template" class="inputConfig">
+            <input class="form-control"  type="text" name="">
+            <select class="form-control" name="" id="">
+                <option value="">email</option>
+                <option value="">texto</option>
+                <option value="">data</option>
+                <option value="">nome</option>
+                <option value="">cep</option>
+                <option value="">cpf</option>
+                <option value="">telefone</option>
+            </select>
+        </div>
+    </div>
 </div>
 
 @endsection
