@@ -28,3 +28,4 @@ Route::post("/login/store",[loginController::class,"store"])->name("register");
 Route::middleware("auth")->get("/dashboard",[indexController::class,"dashboard"])->name("dashboard");
 
 Route::get("/dashboard/create/new",[ProjectController::class,"index"])->name("create.new");
+Route::post("/dashboard/create",[ProjectController::class,"store"])->name("created");
