@@ -19,15 +19,15 @@
                     <br>
                     <h3 id="">Dominios abilitados para requiçoes <a onclick="addForm()" class="btn btn-outline-light">+</a></h3>
                     <div id="addInput" class=" text-light">
-                        <input type="text" class="form-control" name="origem-1">
+                        <input type="text" class="form-control" name="origem_1">
                     </div>
                     <small>São todos os sites que estão abilitados a enviar requisições nessa api desse site</small>
-
+                    
                 </div>
                 <div class="col-5">
                     <h3>Dados a serem recebidos <a onclick="addInput()" class="btn btn-outline-light">+</a></h3>
                     <div id="fields" class="inputsConfig">
-
+                        
                     </div>
                 </div>
             </div>
@@ -49,5 +49,5 @@
         </div>
     </div>
 </div>
-
+{{ $errors }}
 @endsection

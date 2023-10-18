@@ -17,7 +17,9 @@ return new class extends Migration
             $table->foreignId("user_id")->constrained();
         
             $table->string("name");
-            $table->json("origin");
+            $table->string("origin");
+            $table->boolean("active");
+            $table->json("config");
             $table->timestamps();
         });
     }

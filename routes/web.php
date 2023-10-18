@@ -25,7 +25,9 @@ Route::get("/login/create",[loginController::class,"create"])->name("createUser"
 Route::get("/logout",[loginController::class,"destroy"]);
 Route::post("/login/store",[loginController::class,"store"])->name("register");
 
-Route::middleware("auth")->get("/dashboard",[indexController::class,"dashboard"])->name("dashboard");
 
-Route::get("/dashboard/create/new",[ProjectController::class,"index"])->name("create.new");
-Route::post("/dashboard/create",[ProjectController::class,"store"])->name("created");
+Route::middleware("auth")->prefix("/dashboard")->group(function () {
+    Route::get("/",[indexController::class,"dashboard"])->name("dashboard");
+    Route::get("/create/new",[ProjectController::class,"index"])->name("create.new");
+    Route::post("/create",[ProjectController::class,"store"])->name("created"); 
+});

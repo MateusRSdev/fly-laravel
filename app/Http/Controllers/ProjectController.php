@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ConfigProject;
+use App\Models\Project;
+use Auth;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -10,8 +13,9 @@ class ProjectController extends Controller
     public function index(){
         return view("create.index")->with("title","Criando novo projeto");
     }
-    public function store(Request $request){
-        
+    public function store(ConfigProject $request){
+
+
         $variables = $request->all();
         $organization[0] = $variables["ProjectName"];
         $organization[1] = $variables["ProjectDescription"];
@@ -31,5 +35,13 @@ class ProjectController extends Controller
             }
             
         }
+        // dd($organization);
+        Project::create([
+            "name"=>$organization[0],
+            "user_id"=>Auth::id(),
+            "origin"=>$organization["origins"][0],
+            "active"=>true,
+            "config"=>json_encode($organization)
+        ]);
     }
 }
