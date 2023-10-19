@@ -20,9 +20,12 @@ class indexController extends Controller
     }
     public function dashboard()
     {
+        $user = User::get(Auth::id());
+        dd($user);
         return view("dashboard")->with([
             "title"=>"por enquanto sem nome",
-            "userLogged"=>Auth::user()
+            "userLogged"=>$user,
+            "projects"=>
         ]);
     }
 }

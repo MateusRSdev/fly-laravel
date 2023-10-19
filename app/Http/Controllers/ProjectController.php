@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ConfigProject;
-use App\Models\Project;
 use Auth;
+use App\Models\User;
+use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Http\Requests\ConfigProject;
 
 class ProjectController extends Controller
 {
-    protected $hidden = ["token"];
+    protected $hidden = ["_token"];
     public function index(){
         return view("create.index")->with("title","Criando novo projeto");
     }
@@ -35,13 +36,19 @@ class ProjectController extends Controller
             }
             
         }
-        // dd($organization);
-        Project::create([
+  
+        $created = Project::create([
             "name"=>$organization[0],
             "user_id"=>Auth::id(),
             "origin"=>$organization["origins"][0],
             "active"=>true,
             "config"=>json_encode($organization)
         ]);
+        if($created){
+            return redirect()->route("dashboard")->with("success","Seu projeto foi criado corretamente");
+        }else{
+            return redirect()->route("dashboard/create")->with("error","Ops! algo deu errado tente novamente");
+        }
+
     }
 }
