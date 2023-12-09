@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Register extends Model
 {
-    use HasFactory;
+    use HasFactory; 
 
     public function project()
     {
         return $this->belongsTo(Project::class);
-    }
+    } 
 }

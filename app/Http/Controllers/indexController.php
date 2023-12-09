@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class indexController extends Controller
@@ -20,12 +21,10 @@ class indexController extends Controller
     }
     public function dashboard()
     {
-        $user = User::get(Auth::id());
-        dd($user);
+        $user = User::find(Auth::id());
         return view("dashboard")->with([
             "title"=>"por enquanto sem nome",
             "userLogged"=>$user,
-            "projects"=>
         ]);
     }
 }
