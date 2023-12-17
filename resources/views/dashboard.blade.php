@@ -27,26 +27,18 @@
 
     <div class="row ">
         <div class="project d-flex mb-5">
+            @foreach ($projectsUser as $project)
             <div class="card-project">
-                <h5 class="m-4"><a href="">Projeto <i class="ri-link"></i></a></h5>
-                <a href="" class="card-link">https://site.comksjdkasjbfkasbdhkasdag\hfjahsdhkavshkdahksdvvahdahs</a>
+                <h5 class="m-4"><a href="">{{$project["name"]}} <i class="ri-link"></i></a></h5>
+                <a href="{{$project["origin"]}}" target="_blank" class="card-link">{{$project["origin"]}}</a>
+                @if ($project["active"] == 1)
                 <p class="online" title="Serivço online"><i class="ri-global-line onlineOn"></i></p>
+                @else
+                <p class="online" title="Serivço online"><i class="ri-global-line onlineOff"></i></p>
+                @endif
             </div>
-            <div class="card-project">
-                <h5 class="m-4"><a href="">Projeto <i class="ri-link"></i></a></h5>
-                <a href="" class="card-link">https://site.comksjdkasjbfkasbdhkasdag\hfjahsdhkavshkdahksdvvahdahs</a>
-                <p class="online" title="Serivço Offline"><i class="ri-global-line onlineOff"></i></p>
-            </div>
-            <div class="card-project">
-                <h5 class="m-4"><a href="">Projeto <i class="ri-link"></i></a></h5>
-                <a href="" class="card-link">https://site.comksjdkasjbfkasbdhkasdag\hfjahsdhkavshkdahksdvvahdahs</a>
-                <p class="online" title="Serivço online"><i class="ri-global-line onlineOn"></i></p>
-            </div>
-            <div class="card-project">
-                <h5 class="m-4"><a href="">Projeto <i class="ri-link"></i></a></h5>
-                <a href="" class="card-link">https://site.comksjdkasjbfkasbdhkasdag\hfjahsdhkavshkdahksdvvahdahs</a>
-                <p class="online" title="Serivço online"><i class="ri-global-line onlineOn"></i></p>
-            </div>
+            @endforeach
+
 
         </div>
     </div>

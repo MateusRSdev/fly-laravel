@@ -9,6 +9,7 @@ class Project extends Model
 {
     use HasFactory;
     protected $fillable = ["name","config","origin","user_id","active"];
+    protected $casts = ["config"=>"array"];
     public function user(){
         return $this->belongsTo(User::class);
     }

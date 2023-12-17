@@ -20,5 +20,5 @@ Route::get('/user', function (Request $request) {
 });
 
 Route::post("/debug",function (Request $request) {
-    dd($request);
+    dd($request->all());
 });

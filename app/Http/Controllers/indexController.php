@@ -22,9 +22,12 @@ class indexController extends Controller
     public function dashboard()
     {
         $user = User::find(Auth::id());
+        $projects = $user->projects->toArray();
+        // dd($projects);
         return view("dashboard")->with([
             "title"=>"por enquanto sem nome",
             "userLogged"=>$user,
+            "projectsUser"=>$projects
         ]);
     }
 }
