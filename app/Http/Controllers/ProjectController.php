@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use App\Models\User;
 use App\Models\Project;
-use Illuminate\Http\Request;
 use App\Http\Requests\ConfigProject;
 
 class ProjectController extends Controller
@@ -36,7 +34,7 @@ class ProjectController extends Controller
             }
             
         }
-  
+
         $created = Project::create([
             "name"=>$organization[0],
             "user_id"=>Auth::id(),
