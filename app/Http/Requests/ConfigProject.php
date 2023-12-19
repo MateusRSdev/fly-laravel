@@ -22,10 +22,10 @@ class ConfigProject extends FormRequest
      */
     public function rules(Request $request): array
     {
-        // dd($request->all());
+        dd($request->all());
         $rules = [
             "ProjectName"=>"required|string",
-            "ProjectDescription"=>"required|string",
+            "ProjectDescription"=>"string",
             "origem_1"=>"url:https|required",
             "fieldName_1"=>"string|required",
             "fieldType_1"=>"string|required"

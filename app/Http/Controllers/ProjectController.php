@@ -14,7 +14,7 @@ class ProjectController extends Controller
     }
     public function store(ConfigProject $request){
 
-
+        dd($request->all());
         $variables = $request->all();
         $organization[0] = $variables["ProjectName"];
         $organization[1] = $variables["ProjectDescription"];

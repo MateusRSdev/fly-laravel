@@ -1,12 +1,13 @@
 @extends('layout.layout-base')
 @section('content')
-    
+
+
 <div class="container">
     <h1>Dashboard</h1>
     <div class="row userMain py-5">
         <div class="col-8 pr-5 text-light">
             <h4>Informções da conta:</h4>
-            <div class="acountInfo">
+            <div  class="acountInfo">
                 <strong>Nivel da conta:<p class="details">Developer</p></strong>
                 <strong>Aplicacoes criadas:<p class="details">5/1</p></strong>
                 <strong>Aplicacoes criadas:<p class="details">5/1</p></strong>
@@ -26,7 +27,7 @@
     </div>
 
     <div class="row ">
-        <div class="project d-flex mb-5">
+        <div   class="project d-flex mb-5">
             @foreach ($projectsUser as $project)
             <div class="card-project">
                 <h5 class="m-4"><a href="">{{$project["name"]}} <i class="ri-link"></i></a></h5>
@@ -44,5 +45,6 @@
     </div>
     
 </div>
+
 @endsection
 
