@@ -9,7 +9,7 @@
             <h4>Informções da conta:</h4>
             <div  class="acountInfo">
                 <strong>Nivel da conta:<p class="details">Developer</p></strong>
-                <strong>Aplicacoes criadas:<p class="details">5/1</p></strong>
+                <strong>Aplicacoes criadas:<p class="details" x-text="count"></p></strong>
                 <strong>Aplicacoes criadas:<p class="details">5/1</p></strong>
             </div>
         </div>
@@ -29,7 +29,7 @@
     <div class="row ">
         <div   class="project d-flex mb-5">
             @foreach ($projectsUser as $project)
-            <div class="card-project">
+            <div class="card-project" data-aos="flip-up">
                 <h5 class="m-4"><a href="">{{$project["name"]}} <i class="ri-link"></i></a></h5>
                 <a href="{{$project["origin"]}}" target="_blank" class="card-link">{{$project["origin"]}}</a>
                 @if ($project["active"] == 1)

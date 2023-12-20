@@ -4,7 +4,7 @@
     <div class="m-5">
         <h1 class="project-title">Criando novo projeto</h1>
 
-        <main class="userMain">
+        <main class="userMain"   >
             <form action="{{ route('created') }}" method="post">
                 @csrf
                 <div class="row p-3">
@@ -13,11 +13,12 @@
                         <input type="text" name="ProjectName" class="form-control col-6">
                         <small>Escolha um nome bem legal</small>
                         <br>
-                        <h3 id="">Dominios abilitados para requiçoes <a onclick="addForm()"
+                        <h3 id="">Dominios abilitados para requiçoes <a id="btnOrigin"
                                 class="btn btn-outline-light">+</a></h3>
-                        <div id="addInput" class=" text-light">
-                            <input type="text" class="form-control" name="origem_1">
+                        <div class=" text-light p-1 inputsConfig rounded" id="originCase">
+                            <input id="inputOrigin" type="text" class="form-control my-2" name="origin-1">
                         </div>
+                       
                         <small>São todos os sites que estão abilitados a enviar requisições nessa api desse site</small>
 
                     </div>
@@ -31,7 +32,7 @@
 
 
                     <div class="col-12">
-                        <h3>Dados a serem recebidos <a id="addForm" class="btn btn-outline-light">+</a></h3>
+                        <h3>Dados a serem recebidos <a id="addForm" class="btn btn-outline-light" >+</a></h3>
                         <div id="fields" class="inputsConfig">
 
                         </div>
@@ -41,11 +42,11 @@
             </form>
         </main>
         <div id="templates" class="d-none">
+
             <div id="template" class="inputConfig row">
-                <div class="col-5">
+         
                     <input class="form-control" type="text" name="">
-                </div>
-                <div class="col-5 d-flex ">
+              
                     <select class="form-control" name="" id="">
                         <option value="email">email</option>
                         <option value="text"">texto</option>

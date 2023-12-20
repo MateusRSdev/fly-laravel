@@ -2,40 +2,31 @@
 import './bootstrap';
 import AOS from "aos";
 import $ from 'jquery';
+
 AOS.init();
-// let origemId = 1;
-// let origemField = 1;
-$("#addForm")
+ 
+let id = 2
+$("#btnOrigin").on("click",function(){
+    if(id<=3){
+        let div =  $("#originCase")
+        let input = $("#inputOrigin").clone()
+        input.attr("name","origin-"+id) 
+        id++
+        console.log(div,input)
+        div.append(input)
+    }else{
+        alert("o numero de dominios nao pode passar de 3")
+    }
+})
 
-// function addForm() {
-//     console.log("aaa");
-//     let form = document.getElementById("addInput");
-//     let formBase = document.createElement("input");
-//     formBase.classList.add("form-control");
-//     formBase.classList.add("my-2");
-    
-//     origemId = origemId + 1;
-//     formBase.setAttribute("name", "origem_"+origemId);
-//     if(origemId > 3){
-//         alert("O numero de dominios cadastrados nao pode passar de 3");
-//     }else{
-//         form.appendChild(formBase);
-//     }
+let origemField = 1
+$("#addForm").on("click",function(){
 
-
-// }
-// function addInput(){
-    
-//     let templates = document.getElementById("templates");
-//     let append = document.getElementById("fields");
-
-//     templates = templates.childNodes[1];
-//     let input = templates.cloneNode(true);
-//     console.log(input);
-    
-//     input.childNodes[1].setAttribute("name","fieldName_"+origemField);
-//     input.childNodes[3].setAttribute("name","fieldType_"+origemField);
-//     origemField = origemField + 1;
-//     append.appendChild(input);
-    
-// }
+    let templates = $("#template").clone()
+    let append = $("#fields")
+    templates.find("input").each((objeto,val)=>{
+        console.log(objeto,val)
+    });
+    append.append(templates);
+ 
+})
