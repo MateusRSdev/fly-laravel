@@ -22,13 +22,14 @@ class ConfigProject extends FormRequest
      */
     public function rules(Request $request): array
     {
-        dd($request->all());
+        // dd($request->all());
         $rules = [
             "ProjectName"=>"required|string",
             "ProjectDescription"=>"string",
             "origem_1"=>"url:https|required",
-            "fieldName_1"=>"string|required",
-            "fieldType_1"=>"string|required"
+            "RfieldName_1"=>"string|required",
+            "RfieldType_1"=>"string|required",
+
         ];
         foreach ($request->all() as $key => $value) {
             $indice = filter_var($key,FILTER_SANITIZE_NUMBER_INT);
@@ -36,14 +37,16 @@ class ConfigProject extends FormRequest
                 if(strpos($key,"origem") !== false){
                     $rules["origem_".$indice] = "url:https";
                 }
-                if(strpos($key,"fieldName") !== false){
-                    $rules["fieldName_".$indice] = "string";
+                if(strpos($key,"RfieldName") !== false){
+                    $rules["RfieldName_".$indice] = "string";
                 }
-                if(strpos($key,"fieldType") !== false){
-                    $rules["fieldType_".$indice] = "string";
+                if(strpos($key,"RfieldType") !== false){
+                    $rules["RfieldType_".$indice] = "string";
                 }
+
             }
         }
+        // dd($rules);         
         return $rules;
     }
 }

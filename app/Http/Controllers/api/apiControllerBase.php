@@ -19,7 +19,7 @@ class apiControllerBase extends Controller
                 $activeProject = $project;
             }   
         }
-        dd(request()->all());   
-        $secureData = ValidationRep::validate($request->all(), $activeProject->config["fields"]);
+        
+        ValidationRep::validate($request->all(), $activeProject->config["fields"]);
     }
 }

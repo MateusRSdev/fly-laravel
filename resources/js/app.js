@@ -10,7 +10,7 @@ $("#btnOrigin").on("click",function(){
     if(id<=3){
         let div =  $("#originCase")
         let input = $("#inputOrigin").clone()
-        input.attr("name","origin-"+id) 
+        input.attr("name","origem_"+id) 
         id++
         console.log(div,input)
         div.append(input)
@@ -23,10 +23,15 @@ let origemField = 1
 $("#addForm").on("click",function(){
 
     let templates = $("#template").clone()
-    let append = $("#fields")
-    templates.find("input").each((objeto,val)=>{
-        console.log(objeto,val)
+    templates.attr("id","")
+    let div = $("#fields")
+    templates.find("input").each((indice,val)=>{
+        val.name+= "_"+origemField
     });
-    append.append(templates);
+    templates.find("select").each((indice,val)=>{
+        val.name+= "_"+origemField
+    });
+    origemField++
+    div.append(templates);
  
 })

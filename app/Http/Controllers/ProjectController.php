@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\apiRepositories\ValidationRep;
 use Auth;
 use App\Models\Project;
+use Illuminate\Support\Arr;
 use App\Http\Requests\ConfigProject;
 
 class ProjectController extends Controller
@@ -14,27 +16,25 @@ class ProjectController extends Controller
     }
     public function store(ConfigProject $request){
 
-        dd($request->all());
         $variables = $request->all();
+        // Arr::map($variables, function($key, $value){
+            
+        // });
         $organization[0] = $variables["ProjectName"];
         $organization[1] = $variables["ProjectDescription"];
+   
         foreach($variables as $key=>$value){
             if(strpos($key,"origem") !== false){
                 $organization["origins"][] = $value;
             }
-            if(strpos($key,"field") !== false){
-                $indice = filter_var($key,FILTER_SANITIZE_NUMBER_INT);
-                if(strpos($key,"Name") !== false){
-                    $organization["fields"][$indice]["name"] = $value;
-                }
-                if(strpos($key,"Type") !== false){
-                    $organization["fields"][$indice]["type"] = $value;
-                }
-
-            }
+                
+   
             
-        }
-
+                
+                $organization["fields"] = ValidationRep::makeRules($variables) ;
+                die;
+            }
+        dd($organization);
         $created = Project::create([
             "name"=>$organization[0],
             "user_id"=>Auth::id(),
