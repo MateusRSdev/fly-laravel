@@ -26,7 +26,7 @@ class ConfigProject extends FormRequest
         $rules = [
             "ProjectName"=>"required|string",
             "ProjectDescription"=>"string",
-            "origem_1"=>"url:https|required",
+            "origem_1"=>"url|required",
             "RfieldName_1"=>"string|required",
             "RfieldType_1"=>"string|required",
 
@@ -35,7 +35,7 @@ class ConfigProject extends FormRequest
             $indice = filter_var($key,FILTER_SANITIZE_NUMBER_INT);
             if($indice > 1){
                 if(strpos($key,"origem") !== false){
-                    $rules["origem_".$indice] = "url:https";
+                    $rules["origem_".$indice] = "url";
                 }
                 if(strpos($key,"RfieldName") !== false){
                     $rules["RfieldName_".$indice] = "string";

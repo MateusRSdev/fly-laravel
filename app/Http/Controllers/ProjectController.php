@@ -27,14 +27,8 @@ class ProjectController extends Controller
             if(strpos($key,"origem") !== false){
                 $organization["origins"][] = $value;
             }
-                
-   
-            
-                
-                $organization["fields"] = ValidationRep::makeRules($variables) ;
-                die;
-            }
-        dd($organization);
+        }
+        $organization["fields"] = ValidationRep::makeRules($variables) ;
         $created = Project::create([
             "name"=>$organization[0],
             "user_id"=>Auth::id(),
